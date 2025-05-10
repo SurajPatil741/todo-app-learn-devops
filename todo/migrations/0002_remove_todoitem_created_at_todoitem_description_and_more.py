@@ -6,22 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todo', '0001_initial'),
+        ("todo", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='todoitem',
-            name='created_at',
+            model_name="todoitem",
+            name="created_at",
         ),
         migrations.AddField(
-            model_name='todoitem',
-            name='description',
-            field=models.TextField(default='No description'),
+            model_name="todoitem",
+            name="description",
+            field=models.TextField(default="No description"),
         ),
         migrations.AlterField(
-            model_name='todoitem',
-            name='title',
+            model_name="todoitem",
+            name="title",
             field=models.CharField(max_length=200),
         ),
     ]

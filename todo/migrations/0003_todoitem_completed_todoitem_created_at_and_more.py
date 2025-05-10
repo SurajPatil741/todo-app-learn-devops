@@ -7,24 +7,26 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('todo', '0002_remove_todoitem_created_at_todoitem_description_and_more'),
+        ("todo", "0002_remove_todoitem_created_at_todoitem_description_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='todoitem',
-            name='completed',
+            model_name="todoitem",
+            name="completed",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='todoitem',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
+            model_name="todoitem",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True, default=django.utils.timezone.now
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='todoitem',
-            name='description',
+            model_name="todoitem",
+            name="description",
             field=models.TextField(blank=True),
         ),
     ]
