@@ -1,0 +1,27 @@
+<!-- templates/todo/todo_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <a href="{% url 'add_todo' %}">Add a new to-do</a>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <h3>{{ todo.title }}</h3>
+                <p>{{ todo.description }}</p>
+                <p>Created on: {{ todo.created_at }}</p>
+                {% if todo.completed %}
+                    <p>Status: Completed</p>
+                {% else %}
+                    <p>Status: Not Completed</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

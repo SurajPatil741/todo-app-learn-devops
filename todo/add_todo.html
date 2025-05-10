@@ -1,0 +1,18 @@
+<!-- templates/todo/add_todo.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add ToDo</title>
+</head>
+<body>
+    <h1>Add ToDo</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'todo_list' %}">Back to ToDo List</a>
+</body>
+</html>

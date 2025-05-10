@@ -1,4 +1,4 @@
-# todo/views.py
+# Triggering CI pipeline test
 from django.shortcuts import render, redirect
 from .models import ToDoItem
 from .forms import ToDoForm  # assuming you have a form for creating ToDo items
@@ -17,4 +17,3 @@ def add_todo(request):
         form = ToDoForm()  # Display an empty form if it's a GET request
 
     return render(request, 'todo/add_todo.html', {'form': form})
-
