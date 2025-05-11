@@ -41,9 +41,10 @@ jobs:
 
     - name: Log in to Docker Hub (no secrets)
       run: echo "${{ env.DOCKER_PASSWORD }}" | docker login -u "${{ env.DOCKER_USERNAME }}" --password-stdin
-      env:
-        DOCKER_USERNAME: surajpatil741
-        DOCKER_PASSWORD: 8m78GKqcrj9spCjoBvuG
+      with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+          logout: true
 
     - name: Build Docker image
       run: |
