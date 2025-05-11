@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Log in to Docker Hub
-        run: echo "${{ secrets.8m78GKqcrj9spCjoBvuG }}" | docker login -u "${{ secrets.surajpatil741 }}" --password-stdin
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Build Docker image
         run: docker build -t surajpatil741/todo-app:latest .
