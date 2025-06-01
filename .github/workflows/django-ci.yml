@@ -62,9 +62,11 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.EC2_HOST }}
+          host: ${{ secrets.EC2_HOST }}      # Ensure this is just '16.16.167.127' without port
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          # Uncomment and set port only if SSH uses non-default port
+          # port: 22
           script: |
             cd ~/todo-app-learn-devops
             git pull origin main
