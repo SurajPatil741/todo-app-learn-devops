@@ -68,7 +68,6 @@ jobs:
           script: |
             cd ~/todo-app-learn-devops
             git pull origin main
-            docker-compose down
-            docker-compose build
-            docker-compose up -d
-            docker-compose exec web python manage.py migrat
+            docker-compose down -v
+            docker-compose up -d --build
+            docker-compose exec web python manage.py migrate
